@@ -236,3 +236,42 @@ if (cin >> n) {
     }
     // Proceed with Prefix/Suffix logic...
 }
+
+
+
+
+/// ---------------ultimate brahamastra
+
+#include <iostream>
+#include <sstream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    cin.ignore(); // Clears the newline character after n
+
+    string line;
+    getline(cin, line);
+
+    stringstream ss(line);
+    vector<int> arr;
+    int val;
+
+    // Stream extraction automatically skips any number of consecutive spaces
+    while (ss >> val) {
+        arr.push_back(val);
+    }
+
+    // Print the array with clean formatting
+    for (size_t i = 0; i < arr.size(); i++) {
+        cout << arr[i];
+        if (i < arr.size() - 1) {
+            cout << " ";
+        }
+    }
+    
+    return 0;
+}
